@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SERBUK AJAIB PENGHILANG NODA PAKAIAN</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f5f2;
+            color: #5d4037;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, #8d6e63 0%, #5d4037 100%);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        /* Hero Image */
+        .hero-image {
+            width: 100%;
+            display: block;
+            margin: 20px 0;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Product Title & Description */
+        .product-header {
+            text-align: center;
+            padding: 30px 0;
+            background: white;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+        }
+
+        .product-title {
+            font-size: 2.2rem;
+            color: #4e342e;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        .product-description {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #6d4c41;
+            line-height: 1.8;
+        }
+
+        /* Benefits Section */
+        .benefits-section {
+            background: white;
+            padding: 40px 20px;
+            margin: 30px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 1.8rem;
+            color: #4e342e;
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .benefit-card {
+            background: #f5f1ee;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid #8d6e63;
+        }
+
+        .benefit-card h3 {
+            color: #5d4037;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .usage-steps {
+            background: #f5f1ee;
+            padding: 25px;
+            border-radius: 8px;
+        }
+
+        .usage-steps ol {
+            padding-left: 20px;
+        }
+
+        .usage-steps li {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        /* Product Details */
+        .product-details {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .product-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .product-image-item {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .product-image-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .product-image-item p {
+            margin-top: 15px;
+            color: #6d4c41;
+            font-size: 0.9rem;
+        }
+
+        /* Color Variants */
+        .color-variants {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .variants-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .variant-item {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            width: 300px;
+        }
+
+        .variant-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: linear-gradient(135deg, #a1887f 0%, #8d6e63 100%);
+            color: white;
+            padding: 50px 20px;
+            margin: 40px 0;
+            border-radius: 10px;
+        }
+
+        .testimonials h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: rgba(255,255,255,0.1);
+            padding: 25px;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            font-weight: 500;
+            text-align: right;
+        }
+
+        /* Countdown Timer */
+        .countdown-section {
+            text-align: center;
+            background: white;
+            padding: 40px 20px;
+            margin: 40px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+        }
+
+        .countdown-title {
+            font-size: 1.5rem;
+            color: #e53935;
+            margin-bottom: 20px;
+        }
+
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .countdown-item {
+            background: #8d6e63;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            min-width: 80px;
+        }
+
+        .countdown-number {
+            font-size: 2rem;
+            font-weight: 300;
+        }
+
+        .countdown-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+
+        /* Notes */
+        .notes-section {
+            background: #fff8e1;
+            padding: 30px 20px;
+            margin: 30px 0;
+            border-radius: 10px;
+            border-left: 4px solid #ffc107;
+        }
+
+        .notes-list {
+            list-style-type: none;
+        }
+
+        .notes-list li {
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .notes-list li:before {
+            content: "✓";
+            color: #4caf50;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* Pricing */
+        .pricing-section {
+            text-align: center;
+            background: white;
+            padding: 40px 20px;
+            margin: 40px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+        }
+
+        .promo-title {
+            color: #e53935;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .promo-subtitle {
+            color: #6d4c41;
+            margin-bottom: 30px;
+        }
+
+        .pricing-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .price-card {
+            background: #f5f1ee;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            min-width: 250px;
+            border: 2px solid #d7ccc8;
+        }
+
+        .price-card.promo {
+            border-color: #e53935;
+            background: #fff3e0;
+            position: relative;
+        }
+
+        .price-card.promo:before {
+            content: "PROMO";
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: #e53935;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        .product-size {
+            font-weight: 500;
+            margin-bottom: 15px;
+            color: #5d4037;
+        }
+
+        .original-price {
+            text-decoration: line-through;
+            color: #9e9e9e;
+            font-size: 1.1rem;
+        }
+
+        .promo-price {
+            font-size: 1.8rem;
+            color: #e53935;
+            font-weight: 300;
+            margin: 10px 0;
+        }
+
+        .savings {
+            color: #4caf50;
+            font-weight: 500;
+        }
+
+        /* Promo Image */
+        .promo-image {
+            position: relative;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .promo-image img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .discount-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #e53935;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            box-shadow: 0 3px 10px rgba(229,57,53,0.3);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Order Form */
+        .order-form-section {
+            background: white;
+            padding: 40px 20px;
+            margin: 40px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+        }
+
+        .form-title {
+            text-align: center;
+            font-size: 1.8rem;
+            color: #4e342e;
+            margin-bottom: 30px;
+        }
+
+        .ooef {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Footer */
+        .footer {
+            background: #4e342e;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 50px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            .product-title {
+                font-size: 1.8rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .pricing-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .variants-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .discount-badge {
+                padding: 10px 15px;
+                font-size: 1rem;
+                top: 10px;
+                right: 10px;
+            }
+
+            .countdown-item {
+                min-width: 60px;
+                padding: 10px;
+            }
+
+            .countdown-number {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .product-header {
+                padding: 20px 15px;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .product-images {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>SERBUK AJAIB PENGHILANG NODA PAKAIAN</h1>
+        </div>
+
+        <!-- Hero Image -->
+        <div class="hero-image">
+            <img src="https://down-id.img.susercontent.com/file/id-11134207-7rbk7-m9zebxbge61pa4.jpg" alt="Serbuk Ajaib Penghilang Noda Pakaian">
+        </div>
+
+        <!-- Product Title & Description -->
+        <div class="product-header">
+            <h2 class="product-title">SERBUK AJAIB PENGHILANG NODA PAKAIAN</h2>
+            <p class="product-description">Cloth Stain Remover adalah solusi terbaik untuk mengatasi noda membandel pada pakaian. Dirancang untuk membersihkan berbagai jenis noda, mulai dari noda makanan, keringat, hingga noda minyak yang sulit hilang. Formula khususnya aman digunakan untuk semua jenis kain kecuali bahan kulit, wol, dan sintetis. Setiap kemasan hadir dengan ukuran praktis untuk kebutuhan rumah tangga.</p>
+        </div>
+
+        <!-- Benefits Section -->
+        <div class="benefits-section">
+            <h2 class="section-title">MANFAAT & CARA PENGGUNAAN</h2>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h3>Manfaat Utama</h3>
+                    <ul>
+                        <li>Menghilangkan noda membandel pada pakaian secara efektif</li>
+                        <li>Aman untuk berbagai jenis kain (kecuali kulit, wol, dan sintetis)</li>
+                        <li>Mudah digunakan dengan hasil yang memuaskan</li>
+                        <li>Membantu menjaga kebersihan dan keindahan pakaian</li>
+                    </ul>
+                </div>
+                
+                <div class="usage-steps">
+                    <h3>Cara Pakai</h3>
+                    <ol>
+                        <li>Rendam pakaian di air hangat (30-60 derajat)</li>
+                        <li>Tambahkan Unikleen Cloth Stain Remover sesuai takaran</li>
+                        <li>Diamkan selama 30-60 menit agar produk bekerja secara optimal</li>
+                        <li>Cuci pakaian seperti biasa dan bilas hingga bersih</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Details -->
+        <div class="product-details">
+            <h2 class="section-title">DETAIL PRODUK</h2>
+            <div class="product-images">
+                <div class="product-image-item">
+                    <img src="https://down-id.img.susercontent.com/file/id-11134207-7rbka-ma9fe8baat7k05.jpg" alt="Detail Produk 1">
+                </div>
+                <div class="product-image-item">
+                    <img src="https://down-id.img.susercontent.com/file/id-11134207-7rbk9-m9zebxbgs7qr6f.jpg" alt="Detail Produk 2">
+                </div>
+                <div class="product-image-item">
+                    <img src="https://down-id.img.susercontent.com/file/id-11134207-7rbk2-m9zebxbgcrhva4.jpg" alt="Detail Produk 3">
+                </div>
+                <div class="product-image-item">
+                    <img src="https://down-id.img.susercontent.com/file/id-11134207-7rbkc-m9zebxbgcrh92e.jpg" alt="Detail Produk 4">
+                </div>
+                <div class="product-image-item">
+                    <img src="https://down-id.img.susercontent.com/file/id-11134207-7rbke-m9zebxbgs7qoea.jpg" alt="Detail Produk 5">
+                </div>
+                <div class="product-image-item">
+                    <img src="https://down-id.img.susercontent.com/file/id-11134207-7rbkc-m9zebxbgcrhs17.jpg" alt="Detail Produk 6">
+                </div>
+            </div>
+        </div>
+
+        <!-- Color Variants -->
+        <div class="color-variants">
+            <h2 class="section-title">VARIAN PRODUK</h2>
+            <div class="variants-container">
+                <div class="variant-item">
+                    <img src="https://down-id.img.susercontent.com/file/id-11134207-7rbk7-m9zebxbge61pa4.jpg" alt="Varian Besar">
+                </div>
+                <div class="variant-item">
+                    <img src="https://down-id.img.susercontent.com/file/id-11134207-7rbkd-m9zebxbgfkm5f5.jpg" alt="Varian Kecil">
+                </div>
+            </div>
+        </div>
+
+        <!-- Testimonials -->
+        <div class="testimonials">
+            <h2>TESTIMONI PELANGGAN</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Luar biasa! Noda membandel di baju kesayangan saya berhasil hilang total. Sangat aman dan mudah digunakan. Produk ini wajib ada di setiap rumah!"</p>
+                    <p class="testimonial-author">- Siti Nurhaliza, Jakarta</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Sudah coba banyak produk penghilang noda, tapi ini yang paling ampuh. Hasilnya memuaskan dan tidak merusak kain. Highly recommended!"</p>
+                    <p class="testimonial-author">- Budi Santoso, Bandung</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Produk ini benar-benar ajaib! Noda minyak di seragam kerja saya hilang dalam 30 menit. Pengemasan rapi dan pengiriman cepat. Terima kasih!"</p>
+                    <p class="testimonial-author">- Dewi Kartika, Surabaya</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Countdown Timer -->
+        <div class="countdown-section">
+            <h2 class="countdown-title">PROMO SPESIAL BERAKHIR DALAM:</h2>
+            <div class="countdown-timer">
+                <div class="countdown-item">
+                    <div class="countdown-number" id="days">02</div>
+                    <div class="countdown-label">Hari</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="hours">12</div>
+                    <div class="countdown-label">Jam</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="minutes">45</div>
+                    <div class="countdown-label">Menit</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="seconds">30</div>
+                    <div class="countdown-label">Detik</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Notes -->
+        <div class="notes-section">
+            <h3 style="text-align: center; margin-bottom: 20px;">INFORMASI PENTING</h3>
+            <ul class="notes-list">
+                <li>Pengiriman 2 - 4 Hari Setelah Pemesanan</li>
+                <li>Mohon Isi Alamat Dengan Lengkap</li>
+                <li>100% Product Original</li>
+            </ul>
+        </div>
+
+        <!-- Pricing -->
+        <div class="pricing-section">
+            <h2 class="promo-title">PROMO SPESIAL HARI INI</h2>
+            <p class="promo-subtitle">Dapatkan Diskon Spesial Untuk Hari Ini Saja, Harga Akan Kembali Normal Setelah:</p>
+            
+            <div class="pricing-container">
+                <div class="price-card">
+                    <div class="product-size">UKURAN KECIL</div>
+                    <div class="original-price">Rp. 195.000</div>
+                    <div class="promo-price">Rp. 157.000</div>
+                    <div class="savings">Anda Hemat Rp. 38.000</div>
+                </div>
+                
+                <div class="price-card promo">
+                    <div class="product-size">UKURAN BESAR</div>
+                    <div class="original-price">Rp. 225.000</div>
+                    <div class="promo-price">Rp. 179.000</div>
+                    <div class="savings">Anda Hemat Rp. 46.000</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Promo Image -->
+        <div class="promo-image">
+            <img src="https://down-id.img.susercontent.com/file/id-11134207-7rbk7-m9zebxbge61pa4.jpg" alt="Promo Spesial">
+            <div class="discount-badge">DISKON 20%</div>
+        </div>
+
+        <!-- Order Form -->
+        <div class="order-form-section">
+            <h2 class="form-title">FORM PEMESANAN</h2>
+            <div class="ooef">
+                <form class="orderonline-embed-form" data-username="emma" data-product-slug="fd54td" data-product-id="689f42062ef91a8a7608afc6" id="oo-embed-form-fd54td-8133" data-origin="orderonline">
+                    <div class="ooef-loader">
+                        <style>
+                            .ooef-loader{visibility: hidden;opacity: 0;position: absolute;left: 0;right: 0;top: 0;bottom: 0;display: flex;justify-content: center;align-items: center;flex-direction: column;animation: ooLoadingIn 10s ease;-webkit-animation: ooLoadingIn 10s ease;animation-fill-mode: forwards;overflow: hidden}
+                            @keyframes ooLoadingIn{0%{visibility: hidden;opacity: 0}20%{visibility: visible;opacity: 0}100%{visibility: visible;opacity: 1}}
+                            @-webkit-keyframes ooLoadingIn{0%{visibility: hidden;opacity: 0}20%{visibility: visible;opacity: 0}100%{visibility: visible;opacity: 1}}
+                            .ooef-loader>div,.ooef-loader>div:after{border-radius: 50%;width: 2.5rem;height: 2.5rem}
+                            .ooef-loader>div{font-size: 10px;position: relative;text-indent: -9999em;border: .25rem solid #f5f5f5;border-left: .25rem solid #5d4037;-webkit-transform: translateZ(0);-ms-transform: translateZ(0);transform: translateZ(0);-webkit-animation: ooLoading 1.1s infinite linear;animation: ooLoading 1.1s infinite linear}
+                            .ooef-loader.error>div{border-left: .25rem solid #ff4500;animation-duration: 5s}
+                            @-webkit-keyframes ooLoading{0%{-webkit-transform: rotate(0);transform: rotate(0)}100%{-webkit-transform: rotate(360deg);transform: rotate(360deg)}}
+                            @keyframes ooLoading{0%{-webkit-transform: rotate(0);transform: rotate(0)}100%{-webkit-transform: rotate(360deg);transform: rotate(360deg)}}
+                        </style>
+                        <div aria-live="polite" role="status">
+                            <div>Loading...</div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>© 2023 SERBUK AJAIB PENGHILANG NODA PAKAIAN. Hak Cipta Dilindungi.</p>
+            <p>Solusi Terbaik untuk Kebersihan Pakaian Anda</p>
+        </div>
+    </div>
+
+    <script>
+        // Countdown Timer Logic
+        function updateCountdown() {
+            const now = new Date();
+            const tomorrow = new Date(now);
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            tomorrow.setHours(0, 0, 0, 0);
+            
+            const diff = tomorrow - now;
+            
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            document.getElementById('days').textContent = String(days).padStart(2, '0');
+            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+        }
+        
+        // Update countdown every second
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+        
+        // Order Form Script
+        if (typeof xLogError != 'function') {
+            var xLogError = function (error) {
+                var req = new XMLHttpRequest();
+                var payload = JSON.stringify({ url: document.location.href, line: error.line, stack: error.stack });
+                var params = 'message=' + encodeURIComponent(error.name) + '&payload=' + encodeURIComponent(payload) + '&type=embed&level=error';
+                req.open('POST', 'https://api.orderonline.id/log', true);
+                req.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                req.send(params);
+            };
+        }
+        
+        try {
+            if (typeof xEmbedScript != 'function') {
+                var xEmbedScript = function () {
+                    !function(w, d, e, v, id, t, s) {
+                        if (d.getElementById(id)) return;
+                        t = d.createElement(e);t.async = !0;t.src = v;t.id = id;
+                        s = d.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s);
+                    }(window, document, 'script', 'https://cdn.orderonline.id/js/embed-v2-slim.min.js?v=8.0.4', 'oo-embed-js');
+                };
+            }
+            
+            if (typeof xEmbedInit != 'function') {
+                var xEmbedInit = function (w, n) {
+                    if (w.ooe) return;
+                    n = w.ooe = function() { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments) };
+                    if (!w._ooe) w._ooe = n;
+                    n.push = n;n.loaded = !0;n.version = '8.0.4';n.queue = [];
+                };
+            }
+            
+            xEmbedInit(window);
+            ooe('setup', 'redirect', 'https://emma.orderonline.id');
+            ooe('init', '5f16831a9d8e8e4fb67472e5', '689f42062ef91a8a7608afc6', null, 'oo-embed-form-fd54td-8133', {"mode":"popup","action":"Klik untuk pemesanan","title":"Form Pemesanan","triggerPixel":true,"triggerGtm":false});
+            
+            if (!window.jQuery) {
+                !function(w, d, e, v, id, t, s) {
+                    if (d.getElementById(id)) return;
+                    t = d.createElement(e);t.async = !0;t.src = v;t.id = id;
+                    t.addEventListener('load', xEmbedScript);
+                    s = d.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s);
+                }(window, document, 'script', 'https://cdn.orderonline.id/js/vendor/jquery.min.js', 'oo-embed-jquery');
+            } else {
+                xEmbedScript();
+            }
+        } catch (e) {
+            xLogError(e);
+            throw e;
+        }
+    </script>
+</body>
+</html>
